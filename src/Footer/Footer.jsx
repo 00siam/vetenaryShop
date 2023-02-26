@@ -8,7 +8,6 @@ const Footer = () => {
   return (
     <>
       <Nav />
-      
       <div className="container">
         i am from footer
       </div>

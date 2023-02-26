@@ -1,7 +1,7 @@
 import Carousel from "react-bootstrap/Carousel";
 import Nav from "../NabBar/Nav";
 
-function Home() {
+const Home = () => {
   //image link
   const image = {
     cat: "https://images.unsplash.com/photo-1596272875729-ed2ff7d6d9c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
@@ -15,7 +15,7 @@ function Home() {
       <Nav />
 
       <div>
-        <Carousel fade>
+        <Carousel>
           <Carousel.Item>
             <img
               className="d-block w-100"
