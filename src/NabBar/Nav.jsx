@@ -19,11 +19,10 @@ function CollapsibleExample() {
             <Nav.Link href="/howToBooks">How To Books</Nav.Link>
             <Nav.Link href="/contactUs">Contact Us</Nav.Link>
             <Nav.Link href="/aboutUs">About Us</Nav.Link>
-            <Nav.Link href="/footer">Footer</Nav.Link>
           </Nav>
           
           <Nav>
-            <Nav.Link href="#deets">Admin</Nav.Link>
+            <Nav.Link href="/adminlogin">Admin</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
