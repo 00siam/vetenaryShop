@@ -28,8 +28,12 @@ function Blogs() {
     <>
       <Nav />
 
+      <div className="container" >
+        <h2 style={{color:"black", marginTop:80}}>Blogs</h2>
+      </div>
+
       <div>
-      <CardGroup style={{marginTop: 80, padding:40}}>
+      <CardGroup style={{marginTop: -30, padding:40}}>
         {/* First blog  */}
       <Card style={{ padding:30, marginRight: 30}}>
         <Card.Img variant="top" src={information.firstPic} />
@@ -75,7 +79,57 @@ function Blogs() {
       </Card>
      
      
-    </CardGroup>
+     </CardGroup>
+      </div>
+
+      <div>
+      <CardGroup style={{marginTop: -30, padding:40}}>
+        {/* First blog  */}
+      <Card style={{ padding:30, marginRight: 30}}>
+        <Card.Img variant="top" src={information.firstPic} />
+        <Card.Body>
+          <Card.Title style={{color:"orange"}}> <b>{information.firstHeading}</b></Card.Title>
+          <Card.Text className="text-justify">
+           {information.firstText}
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <small className="text-muted">{information.firstUpdate}</small>
+        </Card.Footer>
+      </Card>
+      <br />
+
+      {/* Second block  */}
+      <Card style={{ padding:30, marginRight: 30}}>
+        <Card.Img variant="top" src= { information.secondPic } />
+        <Card.Body>
+          <Card.Title style={{color:"orange"}}> <b> { information.secondHeading }</b></Card.Title>
+          <Card.Text>
+            { information.secondText}
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <small className="text-muted"> { information.secondUpdate }</small>
+        </Card.Footer>
+      </Card>
+      <br />
+
+      {/* Third block  */}
+      <Card  style={{ padding:30, marginRight: 30 }}>
+        <Card.Img variant="top" src={ information.thirdPic} />
+        <Card.Body>
+          <Card.Title style={{color:"orange"}}> <b> { information.thirdHeading }</b></Card.Title>
+          <Card.Text>
+            {information.thirdText}
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <small className="text-muted"> { information.thirdUpdate }</small>
+        </Card.Footer>
+      </Card>
+     
+     
+     </CardGroup>
       </div>
     </>
   );
