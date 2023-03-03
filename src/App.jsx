@@ -9,6 +9,7 @@ import Adminlogin from "../src/Admin/Adminlogin";
 import Home from "../src/Home/Home";
 import Blogs from "../src/Blogs/Blogs";
 import Doctorinfomation  from './Doctorinformation/Doctorinfomation';
+import Games from './Games/Games';
 import ContactUs from './Contact/ContactUs';
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/blogs" element={<Blogs/>}/>
         <Route path="/Doctorinfomation" element={<Doctorinfomation/>}/>
         <Route path="/contactUs" element={<ContactUs/>}/>
+        <Route path="/games" element={<Games/>}/>
         <Route path="/adminlogin" element={<Adminlogin/>}/>
       </Routes>
     
