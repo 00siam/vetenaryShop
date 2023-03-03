@@ -16,7 +16,7 @@ const Games = () => {
           <h2 style={{color:"orange", marginTop:80}}>Games</h2>
         </div>
   
-        {/* Doctors info show  */}
+        {/* Games info show  */}
         <div>
         <CardGroup className='mx-auto' style={{marginTop: -30, padding:40, width:"70%"}}>
           {
