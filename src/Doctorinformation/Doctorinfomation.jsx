@@ -18,7 +18,7 @@ const Doctorinformation = () => {
   
         {/* Doctors info show  */}
         <div>
-        <CardGroup className='mx-auto' style={{marginTop: -30, padding:40, width:"50rem"}}>
+        <CardGroup className='mx-auto' style={{marginTop: -30, padding:40, width:"65%"}}>
           {
             information.map((information, i) =><Card key = {i} style={{ padding:30, marginRight: 30}}>
               <Card.Img variant="top" src={information.Picture} />

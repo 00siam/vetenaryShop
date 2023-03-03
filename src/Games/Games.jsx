@@ -18,7 +18,7 @@ const Games = () => {
   
         {/* Doctors info show  */}
         <div>
-        <CardGroup className='mx-auto' style={{marginTop: -30, padding:40, width:"70rem"}}>
+        <CardGroup className='mx-auto' style={{marginTop: -30, padding:40, width:"70%"}}>
           {
             information.map((information, i) =><Card key = {i} style={{ padding:10, marginRight: 30}}>
               <Card.Img variant="top" src={information.Picture} />
