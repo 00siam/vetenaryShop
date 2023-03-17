@@ -5,6 +5,8 @@ import information from "./information"
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 
+import { Link } from "react-router-dom";
+
 const Games = () => {
 
     return (
@@ -24,7 +26,8 @@ const Games = () => {
               <Card.Img variant="top" src={information.Picture} />
 
               <Card.Footer style={{marginTop:20}}>
-                <small className="text-muted" >{information.Name}</small>
+                {/* <small className="text-muted" ></small> */}
+                <Link to={information.navName}>{information.Name}</Link>
               </Card.Footer>
             </Card>
               
