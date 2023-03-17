@@ -26,13 +26,12 @@ const RandomDog = () =>  {
       
         {/* heading */}
         <div className="container" >
-          <h2 style={{color:"orange", marginTop:70}}>Random Dog Picture</h2>
+          <h2 style={{color:"orange", marginTop:80}}>Random Dog Picture</h2>
         </div>
 
         <div>
-            <div id='dogImage'><img src={image} alt="" width={500} height={500}/> </div>
-            {/* <button onClick = {() => getNewDog()}>Get New Dog</button> */}
-            <button type="button" class="btn btn-success" onClick = { () => getNewDog() } style={{marginTop: 20, width: 300, padding:10}}>Get New Dog </button>
+            <div id='dogImage' style={{ marginTop:40}}><img src={image} alt="" width={300} height={300}/> </div>
+            <button type="button" class="btn btn-success" onClick = { () => getNewDog() } style={{marginTop: 20, width: 300, padding:10, borderRadius:20}}>Get New Dog </button>
         </div>
     </>
   )
