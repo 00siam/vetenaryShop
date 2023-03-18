@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from "../NabBar/Nav"
 import information from "./information"
+import Footer from "../Footer/Footer"
 
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
@@ -37,6 +38,9 @@ const Games = () => {
        </CardGroup>
         </div>
 
+        <div style={{marginTop:195}}>
+          <Footer />
+        </div>
 
 
       </>

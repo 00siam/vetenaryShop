@@ -1,6 +1,10 @@
 import Carousel from "react-bootstrap/Carousel";
 import Nav from "../NabBar/Nav";
 
+import Doctorinformation from "../Doctorinformation/Doctorinfomation"
+import Blogs from "../Blogs/Blogs"
+import Footer from "../Footer/Footer"
+
 function Home() {
   //image link
   const image = {
@@ -60,6 +64,15 @@ function Home() {
           </Carousel.Item>
         </Carousel>
       </div>
+
+
+      <Doctorinformation foo={true}/>
+
+      <Blogs foo={true}/>
+
+
+      <Footer/>
+
     </>
   );
 }
