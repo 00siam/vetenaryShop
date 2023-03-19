@@ -6,15 +6,17 @@ import Footer from "../Footer/Footer"
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 
-const Doctorinformation = ({foo = false}) => {
+const Doctorinformation = ({foo = false, header = false}) => {
   return (
     <>
       <Nav />
 
       {/* heading */}
-      <div className="container">
-        <h2 style={{ color: "orange", marginTop: 80 }}>Doctor Information</h2>
+      {
+        header ? " ":  <div className="container">
+        <h2 style={{ color: "orange", marginTop: 80 }}>Doctor Infomation</h2>
       </div>
+     }
 
       {/* Doctors info show  */}
       <div style={{backgroundColor: "#B5B5B5"}}>

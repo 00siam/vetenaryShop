@@ -67,13 +67,15 @@ function Home() {
         </Carousel>
       </div>
 
-      <Blogs foo={true}/>
+      <br />
 
-      <Doctorinformation foo={true}/>
+      <Blogs foo={true} header ={true}/>
 
-      <AboutUs foo={true}/>
+      <Doctorinformation foo={true} header ={true}/>
+      <br />
+      <AboutUs foo={true} header ={true}/>
       
-      <ContactUs foo={true}/>
+      <ContactUs foo={true} header ={true}/>
       
 
 

@@ -2,15 +2,18 @@ import React from "react";
 import Nav from "../NabBar/Nav";
 import Footer from "../Footer/Footer"
 
-const ContactUs = ({foo = false}) => {
+const ContactUs = ({foo = false, header = false}) => {
   return (
     <>
       <Nav />
 
       {/* heading */}
-      <div className="container">
-        <h2 style={{ color: "orange", marginTop: 80 }}>Contact Us</h2>
+      {
+        header ? " ":  <div className="container">
+        <h2 style={{ color: "orange", marginTop: 80 }}>Doctor Infomation</h2>
       </div>
+     }
+
 
       {/* body  */}
       <div style={{backgroundColor: "#B5B5B5", padding:30}}>

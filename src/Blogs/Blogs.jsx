@@ -7,7 +7,7 @@ import CardGroup from "react-bootstrap/CardGroup";
 
 
 
-function Blogs({foo = false}) {
+function Blogs({foo = false, header = false}) {
 
 
   return (
@@ -16,9 +16,11 @@ function Blogs({foo = false}) {
     <Nav />
 
       {/* heading */}
-      <div className="container">
-        <h2 style={{ color: "orange", marginTop: 80 }}>Blogs</h2>
-      </div>
+     {
+      header ? " ":  <div className="container">
+      <h2 style={{ color: "orange", marginTop: 80 }}>Blogs</h2>
+    </div>
+     }
 
       {/* blogs show  */}
       <div>
@@ -28,7 +30,6 @@ function Blogs({foo = false}) {
               <Card.Img variant="top" src={information.Picture} />
               <Card.Body>
                 <Card.Title style={{ color: "orange" }}>
-                  {" "}
                   <b>{information.Heading}</b>
                 </Card.Title>
                 <Card.Text style={{ textAlign: "justify"}}>
