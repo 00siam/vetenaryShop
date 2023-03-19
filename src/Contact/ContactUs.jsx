@@ -13,7 +13,7 @@ const ContactUs = ({foo = false}) => {
       </div>
 
       {/* body  */}
-      <div >
+      <div style={{backgroundColor: "#B5B5B5", padding:30}}>
         <div
           className="center"
           style={{ width: "70%", marginLeft: "15%", marginTop: 25 }}
@@ -85,7 +85,7 @@ const ContactUs = ({foo = false}) => {
 
 
       {/* footer  */}
-       <div style={{marginTop: 140}}>
+       <div style={{marginTop: 100}}>
         {
           foo ? " " : <div> <Footer/> </div>
         }

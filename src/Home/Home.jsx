@@ -71,10 +71,10 @@ function Home() {
 
       <Doctorinformation foo={true}/>
 
+      <AboutUs foo={true}/>
       
       <ContactUs foo={true}/>
       
-      <AboutUs foo={true}/>
 
 
       <Footer/>
