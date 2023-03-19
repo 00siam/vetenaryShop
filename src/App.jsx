@@ -12,6 +12,7 @@ import Doctorinfomation  from './Doctorinformation/Doctorinfomation';
 import Games from './Games/Games';
 import RandomDog from './Games/RandomDog';
 import ContactUs from './Contact/ContactUs';
+import AboutUs from './AboutUs/AboutUs';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/blogs" element={<Blogs/>}/>
         <Route path="/Doctorinfomation" element={<Doctorinfomation/>}/>
         <Route path="/contactUs" element={<ContactUs/>}/>
+        <Route path="/aboutUs" element={<AboutUs/>}/>
         <Route path="/games" element={<Games/>}/>
         <Route path="/games/randomDog" element={<RandomDog/>}/>
         <Route path="/adminlogin" element={<Adminlogin/>}/>

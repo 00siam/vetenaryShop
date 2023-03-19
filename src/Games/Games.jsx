@@ -27,7 +27,6 @@ const Games = () => {
               <Card.Img variant="top" src={information.Picture} />
 
               <Card.Footer style={{marginTop:20}}>
-                {/* <small className="text-muted" ></small> */}
                 <Link to={information.navName}>{information.Name}</Link>
               </Card.Footer>
             </Card>
@@ -38,7 +37,10 @@ const Games = () => {
        </CardGroup>
         </div>
 
-        <div style={{marginTop:195}}>
+
+
+          {/* footer  */}
+        <div style={{marginTop:125}}>
           <Footer />
         </div>
 

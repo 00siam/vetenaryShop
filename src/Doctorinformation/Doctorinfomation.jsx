@@ -17,10 +17,10 @@ const Doctorinformation = ({foo = false}) => {
       </div>
 
       {/* Doctors info show  */}
-      <div>
+      <div style={{backgroundColor: "#B5B5B5"}}>
         <CardGroup
           className="mx-auto"
-          style={{ marginTop: -30, padding: 40, width: "65%" }}
+          style={{ padding: 40, width: "80%" }}
         >
           {information.map((information, i) => (
             <Card key={i} style={{ padding: 30, marginRight: 30 }}>

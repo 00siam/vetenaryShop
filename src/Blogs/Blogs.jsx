@@ -31,7 +31,7 @@ function Blogs({foo = false}) {
                   {" "}
                   <b>{information.Heading}</b>
                 </Card.Title>
-                <Card.Text className="text-justify">
+                <Card.Text style={{ textAlign: "justify"}}>
                   {information.Text}
                 </Card.Text>
               </Card.Body>
@@ -44,6 +44,7 @@ function Blogs({foo = false}) {
       </div>
       
 
+      {/* footer  */}
       {
         foo ? " " : <div> <Footer/> </div>
       }

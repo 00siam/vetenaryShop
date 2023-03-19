@@ -4,6 +4,8 @@ import Nav from "../NabBar/Nav";
 import Doctorinformation from "../Doctorinformation/Doctorinfomation"
 import Blogs from "../Blogs/Blogs"
 import Footer from "../Footer/Footer"
+import ContactUs from "../Contact/ContactUs";
+import AboutUs from "../AboutUs/AboutUs";
 
 function Home() {
   //image link
@@ -65,10 +67,14 @@ function Home() {
         </Carousel>
       </div>
 
+      <Blogs foo={true}/>
 
       <Doctorinformation foo={true}/>
 
-      <Blogs foo={true}/>
+      
+      <ContactUs foo={true}/>
+      
+      <AboutUs foo={true}/>
 
 
       <Footer/>
