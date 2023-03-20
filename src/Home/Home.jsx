@@ -68,7 +68,7 @@ function Home() {
       </div>
 
       <br />
-
+       <br />
       <Blogs foo={true} header ={true}/>
 
       <Doctorinformation foo={true} header ={true}/>
