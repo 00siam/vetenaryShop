@@ -1,3 +1,4 @@
+// install npm intit -y
 // install express mysql cors nodemon
 const express =require("express");
 const mysql =require("mysql");
