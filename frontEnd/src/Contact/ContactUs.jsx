@@ -8,7 +8,7 @@ const ContactUs = ({foo = false, header = false}) => {
   // state for input name, email and message
   const [contact, SetContact] = useState({
     nm : "", // name same to same input name = "name" if input name 
-    email: "",
+    em: "",
     message: ""
   });
 
@@ -18,9 +18,10 @@ const ContactUs = ({foo = false, header = false}) => {
       return { ...pre, [e.target.name]: e.target.value }
     });
   }
-  
+
   console.log(contact);
 
+  // handleClick for button click
   const handleClick = async (e) =>{
     e.preventDefault();
     try{
@@ -77,7 +78,7 @@ const ContactUs = ({foo = false, header = false}) => {
                     <input
                       className="form-control"
                       id="email"
-                      name="email"
+                      name="em"
                       onChange = { handleChange }
                       placeholder="Email"
                       type="email"

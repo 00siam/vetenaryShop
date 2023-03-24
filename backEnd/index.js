@@ -32,7 +32,7 @@ app.post('/contact', (req,res) => {
     // value form contact page pass
     const values = [
         req.body.nm,
-        req.body.email,
+        req.body.em,
         req.body.message,
     ];
 
