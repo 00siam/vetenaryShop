@@ -7,7 +7,7 @@ const ContactUs = ({foo = false, header = false}) => {
 
   // state for input name, email and message
   const [contact, SetContact] = useState({
-    nm : "", // name same to same input name = "name" if input name 
+    nm : "", // name same to same input tag name = "name". if input tag name = "nm" then nm ="" 
     em: "",
     message: ""
   });

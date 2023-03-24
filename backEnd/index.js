@@ -32,9 +32,9 @@ app.post('/contact', (req,res) => {
     
     // value form contact page pass
     const values = [
-        req.body.nm,
-        req.body.em,
-        req.body.message,
+        req.body.nm,    // nm receive from useSate hook
+        req.body.em,    // em receive from useState hook
+        req.body.message,// message receive from useState hook
     ];
 
     // query completed
