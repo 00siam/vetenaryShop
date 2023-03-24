@@ -1,9 +1,12 @@
 import Carousel from "react-bootstrap/Carousel";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Nav from "../NabBar/Nav";
 
-import Doctorinformation from "../Doctorinformation/Doctorinfomation"
-import Blogs from "../Blogs/Blogs"
-import Footer from "../Footer/Footer"
+import Doctorinformation from "../Doctorinformation/Doctorinfomation";
+import Blogs from "../Blogs/Blogs";
+import Footer from "../Footer/Footer";
 import ContactUs from "../Contact/ContactUs";
 import AboutUs from "../AboutUs/AboutUs";
 
@@ -20,51 +23,70 @@ function Home() {
     <>
       <Nav />
 
-      <div>
-        <Carousel fade style={{marginTop:55}}>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={image.cat}
-              style={{ height: 600 }}
-            />
-            <Carousel.Caption>
-              <h3>CAT</h3>
-              <p style={{ fontSize: 20 }}>
-                The cat is a domestic species of small carnivorous mammal.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={image.rabbit}
-              style={{ height: 600 }}
-            />
+      <div style={{ marginTop: 80, border: "2px solid blck" }}>
+        <Container>
+          <Row style={{margin:20, padding: 20, height: 420}}>
+            <Col  style={{marginTop: 40}}>
+              <div style={{color: "orange"}}>
+                <p style={{padding:40, textAlign: "justify", fontSize:"150%"}}>
+                 <b> GOOD VETERINARIANS TALK TO ANIMALS. <br/><br /> GREAT VETERINARIANS HEAR THEM TALK BACK. </b>
+                </p>
+              </div>
+            </Col>
+            <Col>
+              <div
+                style={{backgroundColor: "grey", margin:10, padding:10, width: 700, height:370 }}
+              >
+                <Carousel >
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100"
+                      src={image.cat}
+                      style={{ height: 350 }}
+                    />
+                    <Carousel.Caption>
+                      <h3>CAT</h3>
+                      <p style={{ fontSize: 20 }}>
+                        The cat is a domestic species of small carnivorous
+                        mammal.
+                      </p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100"
+                      src={image.rabbit}
+                      style={{ height: 350 }}
+                    />
 
-            <Carousel.Caption>
-              <h3>Rabbit</h3>
-              <p style={{ fontSize: 20 }}>
-                Rabbit are small mammals in the family Leporidae of the order
-                Lagomorpha.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={image.dog}
-              style={{ height: 600 }}
-            />
+                    <Carousel.Caption>
+                      <h3>Rabbit</h3>
+                      <p style={{ fontSize: 20 }}>
+                        Rabbit are small mammals in the family Leporidae of the
+                        order Lagomorpha.
+                      </p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100"
+                      src={image.dog}
+                      style={{ height: 350 }}
+                    />
 
-            <Carousel.Caption>
-              <h3>Dog</h3>
-              <p style={{ fontSize: 20 }}>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
+                    <Carousel.Caption>
+                      <h3>Dog</h3>
+                      <p style={{ fontSize: 20 }}>
+                        Praesent commodo cursus magna, vel scelerisque nisl
+                        consectetur.
+                      </p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                </Carousel>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
 
       <br />
@@ -76,11 +98,8 @@ function Home() {
       <AboutUs foo={true} header ={true}/>
       
       <ContactUs foo={true} header ={true}/>
-      
-
 
       <Footer/>
-
     </>
   );
 }
