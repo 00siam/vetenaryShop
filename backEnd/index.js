@@ -39,6 +39,7 @@ app.post('/contact', (req,res) => {
 
     // query completed
     db.query(q, [values], (err, data) => {
+        console.log(data);
         if(err) return res.json(err);
         return res.json("Contact importaded successfully");
 
@@ -46,7 +47,46 @@ app.post('/contact', (req,res) => {
 });
 
 
-// 
+
+// login authentication 
+app.post('/adminlogin', (req,res) => {
+    console.log("enter the admin login from backend");
+    // value form contact page pass
+    
+      const name =  req.body.name;    // nm receive from useSate hook
+      const pass =   req.body.password;    // em receive from useState hook
+
+      console.log(name);
+      console.log(pass);
+    // query
+    const q = "SELECT * FROM `admin`";
+    
+    console.log("query below");
+    console.log("query", q);
+    // query completed
+    db.query(q, [name, pass], (err, data) => {
+        if(err) return res.json(err);
+        console.log("query functino below");
+        
+        console.log("query commpleted");
+        console.log(data);
+        console.log("database seceive form name: " ,data[0].name);
+        console.log("database seceive form password: " ,data[0].password);
+        
+        if(name == data[0].name && pass == data[0].password ){
+            res.send(data);
+            console.log("Right username and password")
+        }else{
+            console.log("wrong user name and password");
+        }
+
+    });
+});
+
+
+
+
+// service table show in admin panel
 app.get("/adminSerivices", (req, res) => {
     const q = "SELECT * FROM `contact`";
 

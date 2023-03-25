@@ -1,7 +1,9 @@
-import React from "react"
-import Nav from "../NabBar/Nav"
-import Footer from "../Footer/Footer"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Axios from "axios";
 
+import Nav from "../NabBar/Nav";
+import Footer from "../Footer/Footer";
 
 import {
   MDBBtn,
@@ -16,61 +18,105 @@ import {
 } from "mdb-react-ui-kit";
 
 const Adminlogin = () => {
+
+  const [login, setLogin] = useState({
+    name: "",
+    password: "",
+  });
+
+  
+  const navigate = useNavigate()
+
+  const handleChange = (e) => {
+    setLogin((pre) => {
+      return { ...pre, [e.target.name]: e.target.value };
+    });
+  };
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    try {
+      // console.log("handle clicked start ....");
+      
+      const res = await Axios.post("http://localhost:3001/adminlogin", login);
+      navigate("/adminServices")
+      // console.log("handle clicked closed ....");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <Nav />
 
       {/* Login  */}
-      <div style={{marginLeft: 50,width: "80%", height: 250, textAlign:"center"}}>
-        <MDBContainer fluid style={{marginTop:50}}>
+      <div
+        style={{
+          marginLeft: 50,
+          width: "80%",
+          height: 250,
+          textAlign: "center",
+        }}
+      >
+        <MDBContainer fluid style={{ marginTop: 50 }}>
           <MDBRow className="d-flex justify-content-center align-items-center h-80">
             <MDBCol col="12">
               <MDBCard
                 className="bg-white my-5 mx-auto"
                 style={{ borderRadius: "1rem", maxWidth: "500px" }}
               >
-                <MDBCardBody className="p-5 w-100 d-flex flex-column">
+                <MDBCardBody className="p-4 w-100 d-flex flex-column">
                   <h2 className="fw- mb-2 text-center">Sign in</h2>
                   <p className="text-dark-50 mb-3">
                     Please enter your login and password!
                   </p>
 
                   <MDBInput
-                    wrapperClass="mb-4 w-100"
-                    placeholder="Email address"
-                    id="formControlLg"
-                    type="email"
-                    size="lg"
+                    wrapperClass="mb-2 w-100"
+                    placeholder="Username"
+                    name="name"
+                    onChange={handleChange}
+                    type="text"
                   />
-                  <MDBInput
-                    wrapperClass="mb-4 w-100"
-                    placeholder="Password"
-                    id="formControlLg"
-                    type="password"
-                    size="lg"
-                  />
-                  
-                <div className="d-flex justify-content-between mx-4 mb-4">
-                  <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-                  <a href="!#">Forgot password?</a>
-                </div>
 
-                  <MDBBtn size="lg">Login</MDBBtn>
+                  <MDBInput
+                    wrapperClass="mb-2 w-100"
+                    placeholder="Password"
+                    name="password"
+                    onChange={handleChange}
+                    type="password"
+                  />
+
+                  <div className="d-flex justify-content-between mx-4 mb-4">
+                    <MDBCheckbox
+                      name="flexCheck"
+                      value=""
+                      id="flexCheckDefault"
+                      label="Remember me"
+                    />
+                    <a href="!#">Forgot password?</a>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={handleClick}
+                    className="btn btn-primary"
+                  >
+                    Login
+                  </button>
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
       </div>
-  
 
+      {/* footer  */}
 
-
-         {/* footer  */}
-
-         <div style={{marginTop:268}}>
-          <Footer />
-        </div>
+      <div style={{ marginTop: 268 }}>
+        <Footer />
+      </div>
     </>
   );
 };
