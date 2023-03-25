@@ -46,6 +46,15 @@ app.post('/contact', (req,res) => {
 });
 
 
+// 
+app.get("/adminSerivices", (req, res) => {
+    const q = "SELECT * FROM `contact`";
+
+    db.query(q, (err, data) => {
+        if(err) return res.json(err);
+        return res.json (data)
+    });
+});
 
 // app ruuing
 app.listen(3001, () => {

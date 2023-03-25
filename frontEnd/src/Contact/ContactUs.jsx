@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Nav from "../NabBar/Nav";
 import Footer from "../Footer/Footer";
 import Axios from "axios";
@@ -11,6 +13,8 @@ const ContactUs = ({foo = false, header = false}) => {
     em: "",
     message: ""
   });
+
+  const navigate = useNavigate()
 
   // each input (name, email, message) onchange function  
   const handleChange = (e) =>{
@@ -27,7 +31,9 @@ const ContactUs = ({foo = false, header = false}) => {
     try{
       // console.log("handle clicked start ....");
       await Axios.post("http://localhost:3001/contact", contact);
+      navigate("/")
       // console.log("handle clicked closed ....");
+
     }catch(err){
       console.log(err);
     }
