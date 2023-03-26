@@ -30,22 +30,22 @@ const AdminServices = () => {
 
       {/*  backgroundColor: "red", */}
       <div style={{marginLeft: 20, width:"80%"}}>  
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card" style={{margin:20}}>
-              <div class="card-body">
-                <h5 class="card-title">Total Feedback: </h5>
-                <p class="card-text">
+        <div className="row">
+          <div className="col-sm-6">
+            <div className="card" style={{margin:20}}>
+              <div className="card-body">
+                <h5 className="card-title">Total Feedback: </h5>
+                <p className="card-text">
                   { counter }
                 </p>
               </div>
             </div>
           </div>
-          {/* <div class="col-sm-6">
-            <div class="card" style={{margin:20}}>
-              <div class="card-body">
-                <h5 class="card-title">Total service</h5>
-                <p class="card-text">
+          {/* <div className="col-sm-6">
+            <div className="card" style={{margin:20}}>
+              <div className="card-body">
+                <h5 className="card-title">Total service</h5>
+                <p className="card-text">
                   5
                 </p>
               </div>

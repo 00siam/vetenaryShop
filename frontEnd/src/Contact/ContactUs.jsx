@@ -23,7 +23,7 @@ const ContactUs = ({foo = false, header = false}) => {
     });
   }
 
-  console.log(contact);
+  // console.log(contact);
 
   // handleClick for button click
   const handleClick = async (e) =>{
@@ -67,7 +67,7 @@ const ContactUs = ({foo = false, header = false}) => {
                 <p>+8801600000000</p>
                 <p> myemail@something.com</p>
               </div>
-              <div className="col-sm-7 need-validation" novalidate>
+              <div className="col-sm-7 need-validation">
                 <div className="row">
                   <div className="col-sm-6 form-group">
                     <input
@@ -97,7 +97,7 @@ const ContactUs = ({foo = false, header = false}) => {
                 <br />
 
                 <textarea
-                  class="form-control"
+                  className="form-control"
                   id="message"
                   name="message"
                   onChange = { handleChange }
@@ -111,7 +111,7 @@ const ContactUs = ({foo = false, header = false}) => {
                     <button
                       onClick= { handleClick }
                       type="button"
-                      class="btn btn-success"
+                      className="btn btn-success"
                       style={{
                         marginTop: 20,
                         width: 300,
