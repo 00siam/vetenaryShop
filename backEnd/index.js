@@ -1,3 +1,4 @@
+// ================================================ insallation must start
 // install npm intit -y
 // install express mysql cors nodemon
 const express =require("express");
@@ -21,10 +22,13 @@ const db = mysql.createConnection({
     database: "veterinary",
 });
 
+
 // root page
 app.get("/", (req, res) => {
     res.json("hello this is backend");
 })
+
+// ================================================ insallation must end
 
 // ======================================= contact page start ================================
 app.post('/contact', (req,res) => {
@@ -96,7 +100,7 @@ app.post('/adminlogin', (req,res) => {
 
 
 
-// service table show in admin panel
+//================================================== service table show in admin panel start
 app.get("/adminSerivices", (req, res) => {
     const q = "SELECT * FROM `contact`";
 
@@ -105,10 +109,23 @@ app.get("/adminSerivices", (req, res) => {
         return res.json (data)
     });
 });
+//================================================== service table show in admin panel end
+
+
+// ============================================ admin dash counter show in admin panel start
+app.get("/adminDash", (req, res) => {
+    const q = "SELECT * FROM `contact`";
+
+    db.query(q, (err, data) => {
+        if(err) return res.json(err);
+        return res.json (data)
+    });
+});
+// ============================================ admin dash counter show in admin panel end
 
 
 
-// service table data delete in admin panel
+//============================================ service table data delete in admin panel start
 app.delete("/adminSerivices/:id", (req, res) => {
     const serviceId = req.params.id;
     const q = "DELETE FROM `contact` WHERE id = (?)";
@@ -120,6 +137,7 @@ app.delete("/adminSerivices/:id", (req, res) => {
         return res.json ("Services has been deleted successfully");
     });
 });
+//============================================ service table data delete in admin panel end
 
 // app ruuing
 app.listen(3001, () => {

@@ -67,7 +67,7 @@ const ContactUs = ({foo = false, header = false}) => {
                 <p>+8801600000000</p>
                 <p> myemail@something.com</p>
               </div>
-              <div className="col-sm-7">
+              <div className="col-sm-7 need-validation" novalidate>
                 <div className="row">
                   <div className="col-sm-6 form-group">
                     <input
@@ -77,14 +77,15 @@ const ContactUs = ({foo = false, header = false}) => {
                       onChange = { handleChange }
                       placeholder="Name"
                       type="text"
-                      require = "required"
+                      required
                     />
+                    <div className="invalid-feedback"> please enter your name</div>
                     <br />
                   </div>
                   <div className="col-sm-6 form-group">
                     <input
                       className="form-control"
-                      id="email"
+                      id="exampleFormControlInput1"
                       name="em"
                       onChange = { handleChange }
                       placeholder="Email"
@@ -102,6 +103,7 @@ const ContactUs = ({foo = false, header = false}) => {
                   onChange = { handleChange }
                   placeholder="message"
                   rows="5"
+                  required
                 ></textarea>
 
                 <div className="row">

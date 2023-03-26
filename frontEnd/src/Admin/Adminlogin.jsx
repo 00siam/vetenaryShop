@@ -43,11 +43,15 @@ const Adminlogin = () => {
       const res = await Axios.post("http://localhost:3001/adminlogin", login).then((res) => {
         console.log(res);
         console.log(res.data.message);
+        if(res.data.message == "Wrong username and password combination!"){
+          window.location.reload();
+        }
         console.log(res.data[0].name); // ei line authentication make kore 
 
         // console.log("handle clicked end ....");
       })
-      navigate("/adminServices")
+      
+      navigate("/adminDash")
       // console.log("backend data:" ,res.data[0].name);
       // console.log("frontend data:" ,login.data);
     } catch (err) {

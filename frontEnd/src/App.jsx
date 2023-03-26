@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 //import file
 import Adminlogin from "../src/Admin/Adminlogin";
 import AdminServices from "../src/Admin/AdminServices";
+import AdminDash from "../src/Admin/AdminDash";
 import Home from "../src/Home/Home";
 import Blogs from "../src/Blogs/Blogs";
 import Doctorinfomation  from './Doctorinformation/Doctorinfomation';
@@ -30,6 +31,7 @@ function App() {
         <Route path="/games/randomDog" element={<RandomDog/>}/>
         <Route path="/adminlogin" element={<Adminlogin/>}/>
         <Route path="/adminServices" element={<AdminServices/>}/>
+        <Route path="/adminDash" element={<AdminDash/>}/>
       </Routes>
     
     </div>

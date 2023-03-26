@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import Axios from "axios";
 
-import Nav from "../NabBar/Nav";
+import AdminNav from "./AdminNav";
 import Footer from "../Footer/Footer";
 
 const AdminServices = () => {
   const [adminContact, setAdminContact] = useState([]);
-
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -23,30 +22,30 @@ const AdminServices = () => {
     };
     fetchServices();
   }, []);
-  
+
   const handleDeleteClick = async (id) => {
-    try{
-      console.log("handle deltected click start ")
+    try {
+      console.log("handle deltected click start ");
       console.log("id is: ", id);
-      await Axios.delete("http://localhost:3001/adminSerivices/"+id)
+      await Axios.delete("http://localhost:3001/adminSerivices/" + id);
       window.location.reload();
       console.log("handle deleted click end");
-    }catch(err){
-      console.log(err)
+    } catch (err) {
+      console.log(err);
     }
-  }
+  };
 
   return (
     <>
-      <Nav />
+      <AdminNav />
 
       <div>
-        <h2 style={{ color: "orange", marginTop: 80 }}>
-          Contact Information Table
+        <h2 style={{ color: "orange"}}>
+          Feedback Information Table
         </h2>
       </div>
 
-      <div className="admin" style={{margin:20, padding: 20}}>
+      <div className="admin" style={{ margin: 20, padding: 20 }}>
         <Table striped>
           <thead>
             <tr>
@@ -58,13 +57,23 @@ const AdminServices = () => {
           </thead>
 
           {adminContact.map((contact, i) => (
-            <tbody  key={ contact.id } > 
-             {/* map er porei must key = {}  dite hobe na hole error dibe  */}
+            <tbody key={contact.id}>
+              {/* map er porei must key = {}  dite hobe na hole error dibe  */}
               <tr>
-                <td> { contact. name} </td>
-                <td> { contact. email} </td>
-                <td> { contact. message} </td>
-                <td> <button type="button" onClick={()=>handleDeleteClick( contact.id )} className="btn btn-danger"> Delete </button></td>
+                <td> {contact.name} </td>
+                <td> {contact.email} </td>
+                <td> {contact.message} </td>
+                <td>
+                  {" "}
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteClick(contact.id)}
+                    className="btn btn-danger"
+                  >
+                    {" "}
+                    Delete{" "}
+                  </button>
+                </td>
               </tr>
             </tbody>
           ))}
@@ -74,7 +83,7 @@ const AdminServices = () => {
       {/* table  */}
 
       {/* footer  */}
-      <div style={{ marginTop: 268 }}>
+      <div style={{ marginTop: 100 }}>
         <Footer />
       </div>
     </>
