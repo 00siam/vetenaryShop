@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
     res.json("hello this is backend");
 })
 
-// contact page 
+// ======================================= contact page start ================================
 app.post('/contact', (req,res) => {
     // query
     const q = "INSERT INTO `contact`(`name`, `email`, `message`) VALUES (?)";
@@ -37,14 +37,16 @@ app.post('/contact', (req,res) => {
         req.body.message,// message receive from useState hook
     ];
 
+    
     // query completed
     db.query(q, [values], (err, data) => {
-        console.log(data);
+        // console.log(data);
         if(err) return res.json(err);
         return res.json("Contact importaded successfully");
 
     });
 });
+//======================================= contact page end ================================
 
 
 
@@ -93,6 +95,21 @@ app.get("/adminSerivices", (req, res) => {
     db.query(q, (err, data) => {
         if(err) return res.json(err);
         return res.json (data)
+    });
+});
+
+
+
+// service table data delete in admin panel
+app.delete("/adminSerivices/:id", (req, res) => {
+    const serviceId = req.params.id;
+    const q = "DELETE FROM `contact` WHERE id = (?)";
+    
+    console.log(" delete query below");
+    db.query(q,[serviceId], (err, data) => {
+        console.log("delete query function below");
+        if(err) return res.json(err);
+        return res.json ("Services has been deleted successfully");
     });
 });
 

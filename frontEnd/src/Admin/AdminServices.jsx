@@ -23,6 +23,18 @@ const AdminServices = () => {
     };
     fetchServices();
   }, []);
+  
+  const handleDeleteClick = async (id) => {
+    try{
+      console.log("handle deltected click start ")
+      console.log("id is: ", id);
+      await Axios.delete("http://localhost:3001/adminSerivices/"+id)
+      window.location.reload();
+      console.log("handle deleted click end");
+    }catch(err){
+      console.log(err)
+    }
+  }
 
   return (
     <>
@@ -41,15 +53,18 @@ const AdminServices = () => {
               <th> Name</th>
               <th> Email </th>
               <th> Message </th>
+              <th> Action </th>
             </tr>
           </thead>
 
           {adminContact.map((contact, i) => (
-            <tbody>
+            <tbody  key={ contact.id } > 
+             {/* map er porei must key = {}  dite hobe na hole error dibe  */}
               <tr>
                 <td> { contact. name} </td>
                 <td> { contact. email} </td>
                 <td> { contact. message} </td>
+                <td> <button type="button" onClick={()=>handleDeleteClick( contact.id )} className="btn btn-danger"> Delete </button></td>
               </tr>
             </tbody>
           ))}

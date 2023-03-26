@@ -30,7 +30,8 @@ const ContactUs = ({foo = false, header = false}) => {
     e.preventDefault();
     try{
       // console.log("handle clicked start ....");
-      await Axios.post("http://localhost:3001/contact", contact);
+      const res = await Axios.post("http://localhost:3001/contact", contact);
+      // console.log(res);
       navigate("/")
       // console.log("handle clicked closed ....");
 
