@@ -24,6 +24,8 @@ const Adminlogin = () => {
     password: "",
   });
 
+  // console.log("input login: ",login.name);
+
   
   const navigate = useNavigate()
 
@@ -33,14 +35,21 @@ const Adminlogin = () => {
     });
   };
 
-  const handleClick = async (e) => {
+  const handleClickLogin = async (e) => {
     e.preventDefault();
     try {
-      // console.log("handle clicked start ....");
+      console.log("handle clicked start ....");
       
-      const res = await Axios.post("http://localhost:3001/adminlogin", login);
+      const res = await Axios.post("http://localhost:3001/adminlogin", login).then((res) => {
+        console.log(res);
+        console.log(res.data.message);
+        console.log(res.data[0].name); // ei line authentication make kore 
+
+        // console.log("handle clicked end ....");
+      })
       navigate("/adminServices")
-      // console.log("handle clicked closed ....");
+      // console.log("backend data:" ,res.data[0].name);
+      // console.log("frontend data:" ,login.data);
     } catch (err) {
       console.log(err);
     }
@@ -100,7 +109,7 @@ const Adminlogin = () => {
 
                   <button
                     type="button"
-                    onClick={handleClick}
+                    onClick={handleClickLogin}
                     className="btn btn-primary"
                   >
                     Login

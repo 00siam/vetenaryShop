@@ -4,6 +4,7 @@ const express =require("express");
 const mysql =require("mysql");
 const cors =require("cors");
 
+
 const app = express(); // new exprss application start inside app 
 
 // body parse 
@@ -50,18 +51,18 @@ app.post('/contact', (req,res) => {
 
 
 
-// login authentication 
+// ======================================= login start ================================
 app.post('/adminlogin', (req,res) => {
     console.log("enter the admin login from backend");
     // value form contact page pass
     
       const name =  req.body.name;    // nm receive from useSate hook
-      const pass =   req.body.password;    // em receive from useState hook
+      const pass =  req.body.password;    // em receive from useState hook
 
       console.log(name);
       console.log(pass);
     // query
-    const q = "SELECT * FROM `admin`";
+    const q = "SELECT * FROM `admin` WHERE name = ? AND password = (?)";
     
     console.log("query below");
     console.log("query", q);
@@ -72,18 +73,25 @@ app.post('/adminlogin', (req,res) => {
         
         console.log("query commpleted");
         console.log(data);
-        console.log("database seceive form name: " ,data[0].name);
-        console.log("database seceive form password: " ,data[0].password);
-        
-        if(name == data[0].name && pass == data[0].password ){
-            res.send(data);
-            console.log("Right username and password")
-        }else{
-            console.log("wrong user name and password");
-        }
 
+        // console.log("database seceive form name: " ,data[0].name);
+        // console.log("database seceive form password: " ,data[0].password);
+        
+        // if(name == data[0].name && pass == data[0].password ){
+        //     res.send(data);
+        //     console.log("Right username and password")
+        // }else{
+        //     console.log("wrong user name and password");
+        // }
+
+        if(data.length>0){
+            res.send(data);
+        }else{
+            res.send({ message: "Wrong username and password combination!"});
+        }
     });
 });
+//======================================= Login end ================================
 
 
 
