@@ -44,6 +44,7 @@ const Adminlogin = () => {
         console.log(res);
         console.log(res.data.message);
         if(res.data.message == "Wrong username and password combination!"){
+          alert("Wrong username and password combination!");
           window.location.reload();
         }
         console.log(res.data[0].name); // ei line authentication make kore 

@@ -23,8 +23,8 @@ function Blogs({foo = false, header = false}) {
      }
 
       {/* blogs show  */}
-      <div>
-        <CardGroup style={{ marginTop: -30, padding: 40 }}>
+      <div >
+        <CardGroup style={{ marginTop: -30, padding: 40}}>
           {information.map((information, i) => (
             <Card key={i} style={{ padding: 30, marginRight: 30 }}>
               <Card.Img variant="top" src={information.Picture} />

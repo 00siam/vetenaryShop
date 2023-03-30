@@ -23,9 +23,9 @@ function Home() {
     <>
       <Nav />
 
-      <div style={{ marginTop: 80, border: "2px solid blck" }}>
+      <div style={{ marginTop: 80, border: "2px solid blck"}}>
         <Container>
-          <Row style={{margin:20, padding: 20, height: 420}}>
+          <Row style={{margin:20, padding: 20, height: "25%", width: "70%"}}>
             <Col  style={{marginTop: 40}}>
               <div style={{color: "orange"}}>
                 <p style={{padding:40, textAlign: "justify", fontSize:"150%"}}>
@@ -35,7 +35,7 @@ function Home() {
             </Col>
             <Col>
               <div
-                style={{backgroundColor: "grey", margin:10, padding:10, width: 700, height:370 }}
+                style={{backgroundColor: "grey", margin:10, padding:10, width: "150%", height:370 }}
               >
                 <Carousel >
                   <Carousel.Item>
