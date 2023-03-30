@@ -5,55 +5,59 @@ import Nav from "../NabBar/Nav";
 import Footer from "../Footer/Footer";
 import Axios from "axios";
 
-const ContactUs = ({foo = false, header = false}) => {
-
+const ContactUs = ({ foo = false, header = false }) => {
   // state for input name, email and message
   const [contact, SetContact] = useState({
-    nm : "", // name same to same input tag name = "name". if input tag name = "nm" then nm ="" 
+    nm: "", // name same to same input tag name = "name". if input tag name = "nm" then nm =""
     em: "",
-    message: ""
+    message: "",
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  // each input (name, email, message) onchange function  
-  const handleChange = (e) =>{
-    SetContact((pre)=>{
-      return { ...pre, [e.target.name]: e.target.value }
+  // each input (name, email, message) onchange function
+  const handleChange = (e) => {
+    SetContact((pre) => {
+      return { ...pre, [e.target.name]: e.target.value };
     });
-  }
+  };
 
   // console.log(contact);
 
   // handleClick for button click
-  const handleClick = async (e) =>{
+  const handleClick = async (e) => {
     e.preventDefault();
-    try{
-      // console.log("handle clicked start ....");
-      const res = await Axios.post("http://localhost:3001/contact", contact);
-      // console.log(res);
-      navigate("/")
-      // console.log("handle clicked closed ....");
-
-    }catch(err){
+    try {
+      if (!contact.nm || !contact.em || !contact.message) {
+        alert(" Please provide valide value into each input field!!");
+      }else{
+        // console.log("handle clicked start ....");
+        const res = await Axios.post("http://localhost:3001/contact", contact);
+        // console.log(res);
+        navigate("/");
+        // console.log("handle clicked closed ....");
+        
+      }
+    } catch (err) {
       console.log(err);
     }
-  }
-  
+  };
+
   return (
     <>
       <Nav />
 
       {/* heading */}
-      {
-        header ? " ":  <div className="container">
-        <h2 style={{ color: "orange", marginTop: 80 }}>Contact Us</h2>
-      </div>
-     }
-
+      {header ? (
+        " "
+      ) : (
+        <div className="container">
+          <h2 style={{ color: "orange", marginTop: 80 }}>Contact Us</h2>
+        </div>
+      )}
 
       {/* body  */}
-      <div style={{backgroundColor: "#B5B5B5", padding:30}}>
+      <div style={{ backgroundColor: "#B5B5B5", padding: 30 }}>
         <div
           className="center"
           style={{ width: "70%", marginLeft: "15%", marginTop: 25 }}
@@ -74,12 +78,15 @@ const ContactUs = ({foo = false, header = false}) => {
                       className="form-control"
                       id="name"
                       name="nm"
-                      onChange = { handleChange }
+                      onChange={handleChange}
                       placeholder="Name"
                       type="text"
                       required
                     />
-                    <div className="invalid-feedback"> please enter your name</div>
+                    <div className="invalid-feedback">
+                      {" "}
+                      please enter your name
+                    </div>
                     <br />
                   </div>
                   <div className="col-sm-6 form-group">
@@ -87,7 +94,7 @@ const ContactUs = ({foo = false, header = false}) => {
                       className="form-control"
                       id="exampleFormControlInput1"
                       name="em"
-                      onChange = { handleChange }
+                      onChange={handleChange}
                       placeholder="Email"
                       type="email"
                       required
@@ -100,7 +107,7 @@ const ContactUs = ({foo = false, header = false}) => {
                   className="form-control"
                   id="message"
                   name="message"
-                  onChange = { handleChange }
+                  onChange={handleChange}
                   placeholder="message"
                   rows="5"
                   required
@@ -109,7 +116,7 @@ const ContactUs = ({foo = false, header = false}) => {
                 <div className="row">
                   <div className="col-sm-12 form-group">
                     <button
-                      onClick= { handleClick }
+                      onClick={handleClick}
                       type="button"
                       className="btn btn-success"
                       style={{
@@ -129,13 +136,17 @@ const ContactUs = ({foo = false, header = false}) => {
         </div>
       </div>
 
-
       {/* footer  */}
-       <div style={{marginTop: 100}}>
-        {
-          foo ? " " : <div> <Footer/> </div>
-        }
-       </div>
+      <div style={{ marginTop: 100 }}>
+        {foo ? (
+          " "
+        ) : (
+          <div>
+            {" "}
+            <Footer />{" "}
+          </div>
+        )}
+      </div>
     </>
   );
 };
