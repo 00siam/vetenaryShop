@@ -30,7 +30,7 @@ const RandomDog = () =>  {
         </div>
 
         <div>
-            <div id='dogImage' style={{ marginTop:40}}><img src={image} alt="" width={300} height={300}/> </div>
+            <div id="dogPic" style={{ marginTop:40 }}><img src={image} alt="" width={300} height={300}/> </div>
             <button type="button" class="btn btn-success" onClick = { () => getNewDog() } style={{marginTop: 20, width: 300, padding:10, borderRadius:20}}>Get New Dog </button>
         </div>
     </>
