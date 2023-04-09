@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2023 at 07:29 PM
+-- Generation Time: Apr 09, 2023 at 04:58 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -60,8 +60,8 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `name`, `email`, `message`) VALUES
-(46, 'siam', 's@gmail.com', 'i am new here '),
-(47, 'siam', 'w@gmail.com', 'hello there');
+(53, 'Saad', 'ahemd@gmail.com', 'Update your system'),
+(54, 'sakib', 'sakib15@gmail.com', 'some contact info send');
 
 --
 -- Indexes for dumped tables
@@ -93,7 +93,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
