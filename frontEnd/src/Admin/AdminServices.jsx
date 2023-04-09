@@ -6,23 +6,29 @@ import AdminNav from "./AdminNav";
 import Footer from "../Footer/Footer";
 
 const AdminServices = () => {
-  const [adminContact, setAdminContact] = useState([]);
+  //store data
+  const [adminContact, setAdminContact] = useState([]); 
+  
+  //fetch from backend
+  const fetchServices = async () => {
+    try {
+      console.log("handle clicked start ....");
+      const res = await Axios.get("http://localhost:3001/adminSerivices");
+      setAdminContact(res.data);
+      console.log(res);
+      console.log("handle clicked end ....");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
+  // auto render frontend
   useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        console.log("handle clicked start ....");
-        const res = await Axios.get("http://localhost:3001/adminSerivices");
-        setAdminContact(res.data);
-        console.log(res);
-        console.log("handle clicked end ....");
-      } catch (err) {
-        console.log(err);
-      }
-    };
     fetchServices();
   }, []);
 
+
+  // Delete function 
   const handleDeleteClick = async (id) => {
     try {
       console.log("handle deltected click start ");

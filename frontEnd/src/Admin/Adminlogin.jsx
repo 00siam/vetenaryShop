@@ -89,7 +89,7 @@ const Adminlogin = () => {
                 <MDBCardBody className="p-4 w-100 d-flex flex-column">
                   <h2 className="fw- mb-2 text-center">Sign in</h2>
                   <p className="text-dark-50 mb-3">
-                    Please enter your login and password!
+                    Please enter your login and password
                   </p>
 
                   <MDBInput

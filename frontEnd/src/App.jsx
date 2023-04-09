@@ -13,6 +13,7 @@ import Blogs from "../src/Blogs/Blogs";
 import Doctorinfomation  from './Doctorinformation/Doctorinfomation';
 import Games from './Games/Games';
 import RandomDog from './Games/RandomDog';
+import QuizGame from './Games/QuizGame';
 import YearInDate from './Games/YearInDate';
 import ContactUs from './Contact/ContactUs';
 import AboutUs from './AboutUs/AboutUs';
@@ -29,6 +30,7 @@ function App() {
         <Route path="/contactUs" element={<ContactUs/>}/>
         <Route path="/aboutUs" element={<AboutUs/>}/>
         <Route path="/games" element={<Games/>}/>
+        <Route path="/games/QuizGame" element={<QuizGame/>}/>
         <Route path="/games/randomDog" element={<RandomDog/>}/>
         <Route path="/games/yearsInDate" element={<YearInDate/>}/>
         <Route path="/adminlogin" element={<Adminlogin/>}/>
