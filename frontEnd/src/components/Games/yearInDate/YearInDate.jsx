@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Nav from "../NabBar/Nav";
+import Nav from "../../NabBar/Nav";
 import { MDBInput } from "mdb-react-ui-kit";
 
-import Footer from "../Footer/Footer";
+import Footer from "../../Footer/Footer";
 
 const YearInDate = () => {
   const [birthday, setBirthday] = useState("");

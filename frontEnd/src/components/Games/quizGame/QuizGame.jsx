@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Nav from "../NabBar/Nav";
+import Nav from "../../NabBar/Nav";
 import "./quizGame.css";
 
 const QuizGame = () => {

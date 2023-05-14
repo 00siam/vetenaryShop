@@ -5,18 +5,18 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //import file
-import Adminlogin from "../src/Admin/Adminlogin";
-import AdminServices from "../src/Admin/AdminServices";
-import AdminDash from "../src/Admin/AdminDash";
-import Home from "../src/Home/Home";
-import Blogs from "../src/Blogs/Blogs";
-import Doctorinfomation from "./Doctorinformation/Doctorinfomation";
-import Games from "./Games/Games";
-import RandomDog from "./Games/RandomDog";
-import QuizGame from "./Games/QuizGame";
-import YearInDate from "./Games/YearInDate";
-import ContactUs from "./Contact/ContactUs";
-import AboutUs from "./AboutUs/AboutUs";
+import Adminlogin from "../src/components/Admin/Adminlogin";
+import AdminServices from "../src/components/Admin/AdminServices";
+import AdminDash from "../src//components/Admin/AdminDash";
+import Home from "../src/components/Home/Home";
+import Blogs from "../src/components/Blogs/Blogs";
+import Doctorinfomation from "./components/Doctorinformation/Doctorinfomation";
+import Games from "./components/Games/Games";
+import QuizGame from "./components/Games/quizGame/QuizGame";
+import RandomDog from "./components/Games/randomDogImage/RandomDog";
+import YearInDate from "./components/Games/yearInDate/YearInDate";
+import ContactUs from "./components/Contact/ContactUs";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
   return (
@@ -30,9 +30,9 @@ function App() {
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/games" element={<Games />} />
-          <Route path="/games/QuizGame" element={<QuizGame />} />
-          <Route path="/games/randomDog" element={<RandomDog />} />
-          <Route path="/games/yearsInDate" element={<YearInDate />} />
+          <Route path="/games/Games/QuizGame" element={<QuizGame />} />
+          <Route path="/games/Games/randomDog" element={<RandomDog />} />
+          <Route path="/games/Games/yearsInDate" element={<YearInDate />} />
           <Route path="/adminlogin" element={<Adminlogin />} />
           <Route path="/adminServices" element={<AdminServices />} />
           <Route path="/adminDash" element={<AdminDash />} />

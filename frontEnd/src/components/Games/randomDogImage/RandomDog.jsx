@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from "../NabBar/Nav"
+import Nav from "../../NabBar/Nav";
 
 
 
@@ -17,7 +17,7 @@ const RandomDog = () =>  {
     }
 
     useEffect( ()=> {  
-        console.log("photo printed");
+        // console.log("photo printed");
     },[])
 
   return (
@@ -33,7 +33,7 @@ const RandomDog = () =>  {
 
         <div>
             <div id="dogPic" style={{ marginTop:40 }}><img src={image} alt="" width={300} height={300}/> </div>
-            <button type="button" class="btn btn-success" onClick = { () => getNewDog() } style={{marginTop: 20, width: 300, padding:10, borderRadius:20}}>Get New Dog </button>
+            <button type="button" className="btn btn-success" onClick = { () => getNewDog() } style={{marginTop: 20, width: 300, padding:10, borderRadius:20}}>Get New Dog </button>
         </div>
     </>
   )
