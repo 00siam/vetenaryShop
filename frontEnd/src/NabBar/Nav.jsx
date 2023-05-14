@@ -30,7 +30,6 @@ const CollapsibleExample = () => {
             <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/blogs">Blogs</Nav.Link>
             <Nav.Link href="/Doctorinfomation">Doctor Information</Nav.Link>
-            {/* <Nav.Link href="/howToBooks">How To Books</Nav.Link> */}
             <Nav.Link href="/contactUs">Contact Us</Nav.Link>
             <Nav.Link href="/aboutUs">About Us</Nav.Link>
             <Nav.Link href="/games">Games</Nav.Link>

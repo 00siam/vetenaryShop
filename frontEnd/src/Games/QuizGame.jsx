@@ -65,7 +65,6 @@ const QuizGame = () => {
     if (isCorrect) {
       setScore( score + 1 );
     }
-
     if (currentQuestion + 1 < questions.length) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
